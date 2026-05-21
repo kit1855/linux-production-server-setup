@@ -87,12 +87,15 @@ ssh user@IP-адрес
 
 ```bash
 apt install ufw -y
+### 3.3 Разрешение портов
 
-ufw allow 22/tcp
-ufw allow 80/tcp
-ufw allow 443/tcp
-ufw allow 9100/tcp
+```bash
+ufw allow 22/tcp      # SSH
+ufw allow 80/tcp      # HTTP (будет перенаправлять на HTTPS)
+ufw allow 443/tcp     # HTTPS
+ufw allow 9100/tcp    # Node Exporter (мониторинг)
 ```
+
 ### 3.4 Включение UFW
 
 ```bash
