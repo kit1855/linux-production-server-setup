@@ -207,4 +207,3 @@ crontab -e
 # Добавить строку:
 0 3 * * * /home/user/backup.sh
 ```
-```
