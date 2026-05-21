@@ -262,25 +262,29 @@ systemctl reload nginx
 ```bash
 apt install certbot python3-certbot-nginx -y
 ```
-7.3 Получение сертификата
-```bash
 
+### 7.3 Получение сертификата
+
+```bash
 certbot --nginx -d serv123.ru
 ```
-7.4 Ответы на вопросы
-Вопрос	Что ответить
-Email для уведомлений	Введите вашу почту
-Согласие с условиями	Y
-Делиться email с EFF	N
-Перенаправлять HTTP на HTTPS	2 (выбрать Redirect)
 
-7.5 Проверка
+### 7.4 Ответы на вопросы
+
+| Вопрос | Что ответить |
+|--------|--------------|
+| Email для уведомлений | Введите вашу почту |
+| Согласие с условиями | `Y` |
+| Делиться email с EFF | `N` |
+| Перенаправлять HTTP на HTTPS | `2` (выбрать Redirect) |
+
+### 7.5 Проверка
 ```bash
 certbot certificates
 ```
 Должны увидеть информацию о сертификате и дату истечения.
 
-7.6 Проверка в браузере
+### 7.6 Проверка в браузере
 
 Откройте https://serv123.ru. В адресной строке должен быть зелёный замок или щит.
 
@@ -298,7 +302,8 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_e
 tar xvf node_exporter-1.7.0.linux-amd64.tar.gz
 mv node_exporter-1.7.0.linux-amd64/node_exporter /usr/local/bin/
 ```
-8.3 Создание сервиса
+
+### 8.3 Создание сервиса
 ```bash
 nano /etc/systemd/system/node_exporter.service
 ```
@@ -317,23 +322,24 @@ ExecStart=/usr/local/bin/node_exporter
 [Install]
 WantedBy=multi-user.target
 ```
-8.4 Запуск и автозагрузка
+### 8.4 Запуск и автозагрузка
 ```bash
 systemctl daemon-reload
 systemctl start node_exporter
 systemctl enable node_exporter
 ```
-8.5 Проверка
+### 8.5 Проверка
 ```bash
 systemctl status node_exporter
 ```
 Должны увидеть active (running).
 
-8.6 Проверка метрик
+### 8.6 Проверка метрик
 ```bash
 curl http://localhost:9100/metrics | head
 ```
 Должны увидеть строки, начинающиеся с node_.
-8.7 Проверка в браузере
+
+### 8.7 Проверка в браузере
 
 Откройте http://serv123.ru:9100/metrics. Должна открыться страница с техническими метриками.
