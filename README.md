@@ -84,11 +84,11 @@ linux-production-server-setup/
 
 ## Скриншоты
 
-| Скриншот | Что показывает |
-|----------|----------------|
-| [serv123.ru.png](./screenshots/serv123.ru.png) | Сайт по HTTPS, сертификат валиден |
-| [ufw-status.png](./screenshots/ufw-status.png) | Статус UFW (firewall) |
-| [fail2ban-status.png](./screenshots/fail2ban-status.png) | Статус Fail2ban (защита SSH) |
-| [docker-ps.png](./screenshots/docker-ps.png) | Запущенные контейнеры |
-| [backup-check.png](./screenshots/backup-check.png) | Созданные бэкапы |
-| [node-exporter.png](./screenshots/node-exporter.png) | Метрики Node Exporter |
+| Скриншот                                                 | Что показывает                    |
+|----------------------------------------------------------|-----------------------------------|
+| [serv123.ru.png](./screenshots/serv123.ru.png)           | Сайт по HTTPS, сертификат валиден |
+| [ufw-status.png](./screenshots/ufw-status.png)           | Статус UFW (firewall)             |
+| [fail2ban-status.png](./screenshots/fail2ban-status.png) | Статус Fail2ban (защита SSH)      |
+| [docker-ps.png](./screenshots/docker-ps.png)             | Запущенные контейнеры             |
+| [backup-check.png](./screenshots/backup-check.png)       | Созданные бэкапы                  |
+| [node-exporter.png](./screenshots/node-exporter.png)     | Метрики Node Exporter             |
