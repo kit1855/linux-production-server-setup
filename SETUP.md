@@ -17,7 +17,7 @@ lsb_release -a
 ```
 # Проверить, что домен смотрит на ваш сервер (выполнить на локальном компьютере)
 ```bash
-nslookup ваш-домен.ru
+nslookup serv123.ru
 ```
 # Проверить SSH-доступ
 ```bash
@@ -203,20 +203,20 @@ apt install nginx -y
 ```bash
 nano /etc/nginx/sites-available/reverse-proxy
 ```
-Вставьте содержимое (замените ваш-домен на ваш реальный домен):
+Вставьте содержимое:
 ```bash
 server {
     listen 80;
-    server_name ваш-домен;
+    server_name serv123.ru;
     return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name ваш-домен;
+    server_name serv123.ru;
 
-    ssl_certificate /etc/letsencrypt/live/ваш-домен/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/ваш-домен/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/serv123.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/serv123.ru/privkey.pem;
 
     location / {
         proxy_pass http://localhost:3000;
