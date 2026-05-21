@@ -158,7 +158,11 @@ systemctl enable fail2ban
 ```bash
 fail2ban-client status sshd
 ```
-Должны увидеть: Currently failed: 0, Currently banned: 0
+Должны увидеть:
+
+- Currently failed: 0
+- Currently banned: 0
+
 
 ## 5. Установка Docker
 
