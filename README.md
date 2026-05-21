@@ -31,27 +31,23 @@ sudo systemctl status node_exporter
 ls -la /home/user/backups/
 
 ## Структура репозитория
-linux-production-server-setup/
-├── README.md
-├── ARCHITECTURE.md
-├── SETUP.md
-├── TROUBLESHOOTING.md
-├── configs/
-│ ├── nginx/
-│ │ └── reverse-proxy.conf
-│ ├── fail2ban/
-│ │ └── jail.local
-│ └── ssh/
-│ └── sshd_config
-├── scripts/
-│ └── backup.sh
-└── screenshots/
-├── serv123.ru.png
-├── ufw-status.png
-├── fail2ban-status.png
-├── docker-ps.png
-├── backup-check.png
-└── node-exporter.png
+
+- README.md
+- ARCHITECTURE.md
+- SETUP.md
+- TROUBLESHOOTING.md
+- configs/
+  - nginx/reverse-proxy.conf
+  - fail2ban/jail.local
+  - ssh/sshd_config
+- scripts/backup.sh
+- screenshots/
+  - serv123.ru.png
+  - ufw-status.png
+  - fail2ban-status.png
+  - docker-ps.png
+  - backup-check.png
+  - node-exporter.png
 
 ## Основные настройки
 
