@@ -20,6 +20,7 @@ nslookup serv123.ru
 
 # Проверить SSH-доступ
 ssh user@IP-адрес
+```
 
 ## 2. Безопасность SSH
 
