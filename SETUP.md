@@ -86,6 +86,8 @@ ssh user@IP-адрес
 
 ```bash
 apt install ufw -y
+```
+
 ### 3.3 Разрешение портов
 
 ```bash
