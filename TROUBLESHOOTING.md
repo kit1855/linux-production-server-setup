@@ -32,14 +32,14 @@ sudo systemctl start nginx
 docker start test-app
 
 # Перевыпустить сертификат
-sudo certbot --nginx -d ваш-домен --force-renew
+sudo certbot --nginx -d serv123.ru --force-renew
 ```
 
 ---
 
 ## 2. Не работает перенаправление HTTP → HTTPS
 
-**Симптом:** При открытии `http://ваш-домен` сайт не перенаправляется на HTTPS.
+**Симптом:** При открытии `http://serv123.ru` сайт не перенаправляется на HTTPS.
 
 **Причина:** Неправильная конфигурация Nginx.
 
@@ -47,7 +47,7 @@ sudo certbot --nginx -d ваш-домен --force-renew
 
 ```bash
 sudo nginx -T | grep -A 10 "server {"
-curl -I http://ваш-домен
+curl -I http://serv123.ru
 ```
 
 **Решение:** В конфиге Nginx должен быть блок:
@@ -55,7 +55,7 @@ curl -I http://ваш-домен
 ```nginx
 server {
     listen 80;
-    server_name ваш-домен;
+    server_name serv123.ru;
     return 301 https://$server_name$request_uri;
 }
 ```
@@ -129,7 +129,7 @@ sudo ufw allow 22/tcp
 
 ## 5. Не открываются метрики Node Exporter
 
-**Симптом:** Страница `http://ваш-домен:9100/metrics` не открывается.
+**Симптом:** Страница `http://serv123.ru:9100/metrics` не открывается.
 
 **Вероятные причины:**
 - Node Exporter не запущен
@@ -166,7 +166,7 @@ sudo ufw reload
 
 ```bash
 ping -c 4 8.8.8.8
-nslookup ваш-домен
+nslookup serv123.ru
 sudo ufw status
 ```
 
@@ -174,7 +174,7 @@ sudo ufw status
 
 ```bash
 # Принудительно использовать IPv4
-certbot --nginx -d ваш-домен --preferred-challenges http
+certbot --nginx -d serv123.ru --preferred-challenges http
 
 # Временно отключить UFW
 sudo ufw disable
@@ -208,6 +208,3 @@ crontab -e
 0 3 * * * /home/user/backup.sh
 ```
 ```
-
----
-
